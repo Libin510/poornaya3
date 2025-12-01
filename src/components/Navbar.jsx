@@ -15,7 +15,7 @@ export default function Navbar() {
     { label: "Contact", href: "/contact" },
   ];
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-2">
+    <nav className="fixed top-4 left-0 w-full z-50 px-6 py-2">
       <div
         className=" 
         flex items-center justify-between 
@@ -41,7 +41,7 @@ export default function Navbar() {
           {navLinks.map((link) => {
              const isActive = pathname === link.href;
              return(
-            <li>
+            
               <Link
                 key={link.href}
                 href={link.href}
@@ -53,7 +53,6 @@ export default function Navbar() {
               >
                 {link.label}
               </Link>
-            </li>
             );
           })}
 
