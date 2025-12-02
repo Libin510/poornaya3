@@ -12,7 +12,8 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Contact", href: "/contact" },
+    { label: "Referal", href: "/referal" },
+    { label: "Contact Us", href: "/contact" },
   ];
   return (
     <nav className="fixed top-4 left-0 w-full z-50 px-6 py-2">
