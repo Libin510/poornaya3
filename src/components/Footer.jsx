@@ -168,7 +168,7 @@ export default function Footer() {
               <img src="/poornaya.png" className="w-28 h-24 object-contain" alt="Poornaya" />
             </div>
 
-            <p className="text-sm text-black mb-4 leading-relaxed">
+            <p className="text-sm text-black mb-4 font-semibold leading-relaxed">
               Providing Physical And Mental Related Solutions For Over 12 Years.
               <br />
               Protecting What Matters Most To You And Your Family.
@@ -176,14 +176,14 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="space-y-2 text-sm text-black">
-              <div className="flex items-center gap-2">
-                <span>📞</span> 1300990205
+              <div className="flex items-center font-semibold gap-2">
+                <span className="text-black">📞</span> 1300990205
               </div>
-              <div className="flex items-center gap-2">
-                <span>📧</span> Info@Poornaya.Com.Au
+              <div className="flex items-center font-semibold gap-2">
+                <span className="text-black">📧</span> Info@Poornaya.Com.Au
               </div>
-              <div className="flex items-center gap-2">
-                <span>📍</span> Melbourne, Victoria
+              <div className="flex items-center font-semibold gap-2">
+                <span className="text-black">📍</span> Melbourne, Victoria
               </div>
             </div>
           </div>
