@@ -1,8 +1,13 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import Footer from "@/components/Footer";
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  MoveRight,
+} from "lucide-react";
 
-export default function services() {
+export default function Services() {
   const services = [
     {
       title: "Functional Behaviour Assessments",
@@ -67,31 +72,37 @@ export default function services() {
     "Behaviour Support",
     "High-Risk Support",
   ];
+
   return (
     <div className="p-2 bg-gradient-to-r from-[#FBFBFB] to-[#EFF3D0]">
-      <div className="bg-[#98C44B] w-full py-36 rounded-lg bg-[url('/serviceLine.png')] bg-no-repeat bg-bottom-right bg-overflow-hidden ">
-        <p className="text-center font-semibold text-7xl text-[#003A11]">
+      
+      {/* HERO SECTION */}
+      <div className="bg-[#98C44B] w-full py-24 md:py-36 rounded-lg bg-[url('/serviceLine.png')] bg-no-repeat bg-bottom-right bg-contain">
+        <p className="text-center font-semibold text-4xl md:text-6xl lg:text-7xl text-[#003A11]">
           Services
         </p>
       </div>
-      <section className="w-full px-6 md:px-12 mb-16">
-        <div className="p-20 text-center max-w-6xl mx-auto">
-          <p className="font-medium text-3xl ">
+
+      {/* INTRO SECTION */}
+      <section className="w-full px-4 sm:px-6 md:px-12 my-12 md:my-16">
+        <div className="text-center max-w-4xl mx-auto">
+          <p className="font-medium text-xl md:text-3xl leading-relaxed">
             We Deliver Positive Behaviour Support For Children, Young People,
-            And Adults — Especially Those With Multiple Or Complex Support
-            Needs.{" "}
+            And Adults — Especially Those With Multiple Or Complex Support Needs.
           </p>
         </div>
-        <div className=" p-8">
+
+        {/* SERVICES GRID */}
+        <div className="mt-12">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((service, index) => (
                 <div
                   key={index}
                   className="group bg-green-100 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   {/* Image Section */}
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-48 md:h-56 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
@@ -99,29 +110,22 @@ export default function services() {
                     />
                     <div className="absolute inset-0 bg-black/20"></div>
 
-                    {/* Title on Image */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3 className="text-white text-2xl font-semibold drop-shadow-lg">
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <h3 className="text-white text-xl md:text-2xl font-semibold drop-shadow-lg">
                         {service.title}
                       </h3>
                     </div>
                   </div>
 
-                  {/* Description Section */}
+                  {/* Description */}
                   <div className="bg-green-100 p-6 flex items-center justify-between gap-4">
-                    <p className="text-[#003A11] text-sm font-medium flex-1">
+                    <p className="text-[#003A11] text-sm md:text-base font-medium flex-1">
                       {service.description}
                     </p>
 
-                    {/* Arrow Button */}
-                    <div className="flex-shrink-0">
-                      <div className="bg-[#003A11] w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 cursor-pointer group-hover:scale-110">
-                        <ArrowUpRight
-                          className="w-5 h-5  text-white"
-                          strokeWidth={2.5}
-                        />
-                      </div>
-                    </div>
+                    <button className="bg-[#003A11] w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center group-hover:scale-110 transition-all">
+                      <ArrowUpRight className="w-4 md:w-5 h-4 md:h-5 text-white" />
+                    </button>
                   </div>
                 </div>
               ))}
@@ -129,32 +133,29 @@ export default function services() {
           </div>
         </div>
       </section>
-      <section>
-        <div className=" bg-[#7CCA984D] p-8 flex items-center justify-center relative overflow-hidden">
-          {/* Decorative circles */}
-          
 
-          <div className="w-full max-w-6xl grid md:grid-cols-2 gap-8 items-center relative z-10">
-            {/* Left Section */}
-            <div className="flex flex-col">
-              <div>
-                <p className="text-5xl font-bold text-gray-900 ">
-                  Eligibility & Funding
-                </p>
-                <p className="text-gray-700  text-sm">
-                  Making Our Services Accessible To Those Who Need Them Most
-                </p>
-              </div>
+      {/* ELIGIBILITY SECTION */}
+      <section className="bg-[#7CCA984D] px-4 sm:px-6 md:px-12 py-16 rounded-lg relative overflow-hidden bg-[url('/eligibilityLine.png')] bg-cover bg-center">
+        <div className="max-w-7xl mx-auto">
+          {/* Heading */}
+          <div className="text-left mb-10">
+            <p className="text-4xl md:text-5xl font-bold text-gray-900">
+              Eligibility & Funding
+            </p>
+            <p className="text-gray-700 mt-2 text-sm md:text-base">
+              Making Our Services Accessible To Those Who Need Them Most
+            </p>
+          </div>
 
-              <button className="group bg-emerald-800 hover:bg-emerald-900 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                Get Started
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
+          {/* GRID */}
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            
+            {/* LEFT EMPTY FOR DESIGN BALANCE */}
+            <div className="hidden lg:block"></div>
 
-            {/* Right Section - Cards */}
-            <div className="space-y-6">
-              {/* NDIS Funding Card */}
+            {/* RIGHT CARDS */}
+            <div className="space-y-8">
+              {/* Funding Card */}
               <div className="bg-white rounded-3xl p-6 shadow-lg">
                 <div className="inline-block bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
                   NDIS Funding
@@ -166,12 +167,12 @@ export default function services() {
                 </p>
 
                 <div className="space-y-2">
-                  {fundingCategories.map((category, index) => (
+                  {fundingCategories.map((category, idx) => (
                     <div
-                      key={index}
+                      key={idx}
                       className="flex items-center gap-2 bg-green-100 px-4 py-2 rounded-full"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-700 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                       <span className="text-gray-800 text-sm font-medium">
                         {category}
                       </span>
@@ -180,7 +181,7 @@ export default function services() {
                 </div>
               </div>
 
-              {/* Pricing Card */}
+              {/* PRICING CARD */}
               <div className="bg-white rounded-3xl p-6 shadow-lg">
                 <div className="inline-block bg-gray-900 text-white px-6 py-2 rounded-full text-sm font-semibold mb-4">
                   Pricing
@@ -192,10 +193,18 @@ export default function services() {
                   Regulations.
                 </p>
               </div>
+
+              {/* BUTTON */}
+              <button className="group bg-[#003A11] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-3 transition-all duration-300 shadow-lg hover:shadow-xl w-fit">
+                Get Started
+                <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

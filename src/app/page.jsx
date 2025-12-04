@@ -1,42 +1,55 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, ArrowRight, Sparkles, MoveRight } from "lucide-react";
 import Footer from "@/components/Footer";
+import MarqueeOnPath from "@/components/MarqueeOnPath";
 
 export default function Home() {
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const aboutus = [
     {
-      title:"People With Disabilities",
-      image:"/Children.png",
-    }, {
-      title:"Children And Families",
-      image:"/Children.png",
-    } ,{
-      title:"Mental Health Support",
-      image:"/Children.png",
-    }
-  ]
+      title: "People With Disabilities",
+      image: "/Children.png",
+    },
+    {
+      title: "Children And Families",
+      image: "/Children.png",
+    },
+    {
+      title: "Mental Health Support",
+      image: "/Children.png",
+    },
+  ];
   return (
-    <div className="text-black p-3">
+    <div className="text-black p-3 flex flex-col gap-16 bg-gradient-to-r from-[#FBFBFB] to-[#EFF3D0]">
       <section
         className="
-    relative 
-    overflow-hidden 
-    pt-20 
+    relative overflow-hidden 
+    pt-24 
     bg-cover bg-bottom bg-no-repeat 
     flex items-center
     rounded-t-lg
+    min-h-[600px] 
+    sm:min-h-[700px]
+    md:min-h-[85vh]
+    lg:min-h-screen
   "
-        style={{
-          backgroundImage: "url('/Subtract.png')",
-        }}
+        style={{ backgroundImage: "url('/Subtract.png')" }}
       >
         <div className="w-full h-screen flex items-end">
-          <div className="flex gap-1 absolute right-[20%] top-[70%] items-center">
+          <div
+            className="
+  absolute 
+  bottom-96 right-5
+  sm:right-[10%] sm:top-[65%]
+  md:right-[20%] md:top-[70%]
+  flex gap-1 items-center
+"
+          >
             <div class="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
               <div class="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
             </div>
@@ -50,7 +63,15 @@ export default function Home() {
             </div>
           </div>
           {/* --- Healthy Mind Tag --- */}
-          <div className="flex gap-1 absolute left-[30%] top-[26%] items-center">
+          <div
+            className="
+  absolute 
+  top-64 left-5 
+  sm:top-[20%] sm:left-[20%] 
+  md:top-[26%] md:left-[30%]
+  flex gap-1 items-center
+"
+          >
             <div className="bg-gradient-to-r from-[#FFFFFF] to-[#666666]  rounded-full p-[1.5px]">
               <div class="w-fit flex items-center gap-2 backdrop-blur-lg bg-[#FFFFFF66] bg-cover bg-center px-5 py-2 rounded-full shadow-md">
                 <span class="text-white text-sm font-semibold">
@@ -81,7 +102,7 @@ export default function Home() {
             </div>
 
             {/* Heading */}
-            <p className="text-[80px]  font-medium text-black animate-in fade-in duration-700 delay-300 drop-shadow-md leading-tight">
+            <p className="text-2xl w-[180px] sm:w-full sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-medium text-black animate-in fade-in duration-700 delay-300 drop-shadow-md leading-tight">
               Where Positive <br /> Change Feels Safe
             </p>
           </div>
@@ -92,21 +113,23 @@ export default function Home() {
             <p className="text-sm font-medium text-black mb-1">
               Get The Right Support
             </p>
-            
           </div>
 
-          <div className="inline-block absolute bottom-0 left-[55%] mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <span className="inline-flex items-center gap-2 px-11 py-3 rounded-full text-[#FFFFFF] bg-[#003A11] text-lg font-semibold shadow-lg">
+          <div
+            className="inline-block absolute bottom-6 left-[80%] -translate-x-1/2
+md:left-[55%] md:translate-x-0 mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700"
+          >
+            <span className="inline-flex items-center gap-2 px-4 sm:px-11 py-3 rounded-full text-[#FFFFFF] bg-[#003A11] text-lg font-semibold shadow-lg">
               Get Started <MoveRight />
             </span>
           </div>
         </div>
       </section>
-      <section className="py-16 px-4 bg-gradient-to-b from-stone-100 to-stone-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-[#FBFBFB] to-[#EFF3D0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Side - Image Card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px] group">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[320px] sm:h-[400px] md:h-[500px] group">
               <img
                 src="/therapys.png"
                 alt="Therapy Session"
@@ -166,78 +189,45 @@ export default function Home() {
               </div>
 
               {/* Service Categories Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                {
-                  aboutus.map((item) => (
-                <div className="relative group cursor-pointer bg-[#98C44B] rounded-2xl pt-8 px-1 pb-1">
-                  <h3 className="absolute text-white font-semibold text-sm top-1 left-3">
-                    {item.title}
-                  </h3>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
-                </div>))
-                }
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-3">
+                {aboutus.map((item, index) => (
+                  <div
+                    key={index}
+                    onClick={() => setSelectedItem(index)}
+                    className={`
+        relative group cursor-pointer bg-[#98C44B] rounded-2xl pt-10 px-1 pb-1 min-h-[140px]
+        ${
+          selectedItem === index
+            ? "bg-[#98C44B] text-white"
+            : " bg-white shadow-xl scale-[1.02]"
+        }
+      `}
+                  >
+                    <h3
+                      className={`
+          absolute font-semibold text-sm top-1 left-3 transition-all duration-300
+          ${selectedItem === index ? "text-white" : "text-black"}
+        `}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover rounded-2xl"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className="relative py-20 px-4 bg-stone-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          {/* Decorative Flower SVG */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40">
-            <img
-              src="/FLOWER.png"
-              alt="Decorative Flower"
-              className="w-fit h-fit"
-            />
-          </div>
-
-          {/* Text Content */}
-          {/* <svg viewBox="0 0 900 200" class="w-full h-full">
-  <path
-    id="curve"
-    d="M0,50 L450,260 L900,50"
-    stroke="black"
-    stroke-width="2"
-    fill="none"
-  />
-
-  <text font-size="40" fill="black">
-    <textPath href="#curve" startOffset="50%" text-anchor="middle">
-      JOURNEY ✨ TO ✨ YOUR ✨ EMPOWERMENT
-    </textPath>
-  </text>
-</svg> */}
-          <svg viewBox="0 0 900 200" class="w-full h-full">
-            <path
-              id="curve"
-              d="M0,80 L460,150 800,80 900,60"
-              // d="M0,60
-              //    C300,120 600,120 900,60"
-              stroke="transparent"
-              fill="none"
-            />
-
-            <text
-              className="font-extrabold font-urbanist"
-              font-size="30"
-              fill="#003A11"
-              letter-spacing="10"
-            >
-              <textPath href="#curve" startOffset="50%" text-anchor="middle">
-                JOURNEY ✦ TO ✦ YOUR ✦ EMPOWER
-              </textPath>
-            </text>
-          </svg>
-        </div>
-      </section>
-
-      <section className="py-16 px-4 bg-[#98C44B] rounded-lg">
-        <div className="max-w-6xl mx-auto">
+<div>
+      <MarqueeOnPath />
+      <section className="py-16 px-4 bg-[#98C44B] rounded-lg overflow-hidden">
+        <div className="relative w-full max-w-md mx-auto sm:max-w-lg md:max-w-xl">
           {/* Heading */}
           <div className="text-center mb-4">
             <h2 className="text-4xl md:text-5xl font-semibold text-[#003A11] mb-3">
@@ -250,7 +240,7 @@ export default function Home() {
           </div>
 
           {/* Main Content Grid */}
-          <div className="relative mt-12">
+          <div className="relative mt-12 ">
             {/* Center Image */}
             <div className="flex justify-center items-center">
               <div className="relative w-full max-w-md">
@@ -262,9 +252,9 @@ export default function Home() {
 
                 {/* Card 1 - Top Left */}
                 <div
-                  class="absolute top-16 -left-4 md:-left-48 w-48 md:w-56 
+                  class="absolute top-16 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56 
     rounded-xl p-4 shadow-lg 
-    bg-white/60 backdrop-blur-md"
+    bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                 >
                   <div
                     class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
@@ -290,9 +280,10 @@ export default function Home() {
                 {/* Card 2 - Top Right */}
 
                 <div
-                  class="absolute top-32 -right-4 md:-right-48 w-48 md:w-56 
+                  class="absolute top-32 -md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
+w-48 md:w-56
     rounded-xl p-4 shadow-lg 
-    bg-white/60 backdrop-blur-md"
+    bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                 >
                   <div
                     class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
@@ -317,9 +308,10 @@ export default function Home() {
                 {/* Card 3 - Bottom Right */}
 
                 <div
-                  class="absolute bottom-36  -right-4 md:-right-48 w-48 md:w-56  
+                  class="absolute bottom-36  --md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
+ w-48 md:w-56  
     rounded-xl p-4 shadow-lg 
-    bg-white/60 backdrop-blur-md"
+    bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                 >
                   <div
                     class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
@@ -345,9 +337,9 @@ export default function Home() {
                 {/* Card 4 - Bottom Left */}
 
                 <div
-                  class="absolute bottom-14 -left-4 md:-left-48 w-48 md:w-56  
+                  class="absolute bottom-14 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56  
     rounded-xl p-4 shadow-lg 
-    bg-white/60 backdrop-blur-md"
+    bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                 >
                   <div
                     class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
@@ -381,7 +373,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-20 px-4 bg-stone-100 relative overflow-hidden">
+      </div>
+      <section className="py-20 px-4 bg-gradient-to-r from-[#FBFBFB] to-[#EFF3D0] relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           {/* Concentric Circles Background */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -396,19 +389,19 @@ export default function Home() {
           {/* Center Content */}
 
           {/* Testimonial Cards - Positioned Around Circle */}
-          <div className="relative h-[500px] md:h-[600px] flex justify-center items-center">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[600px] flex justify-center items-center">
             {/* Testimonial 1 - Top Left */}
-            <div className="absolute flex items-center gap-1 top-0 left-0 md:left-12 animate-in fade-in slide-in-from-left duration-700">
-              <img
-                src="/user1.jpg"
-                alt="Client"
-                className="w-10 h-10 rounded-full object-cover border-2 border-white"
-              />
+            <div className="absolute flex items-center gap-1 top-35 left-0 md:left-40 animate-in fade-in slide-in-from-left duration-700">
               <div className=" gap-3 bg-yellow-200 rounded-full px-4 py-2 shadow-lg max-w-xs">
                 <p className="text-xs font-medium text-gray-900">
                   Poornaya provides a good health solution
                 </p>
               </div>
+              <img
+                src="/user1.jpg"
+                alt="Client"
+                className="w-10 h-10 rounded-full object-cover border-2 border-white"
+              />
             </div>
             <div className="relative z-10 text-center max-w-2xl mx-auto ">
               <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-4">
@@ -422,7 +415,7 @@ export default function Home() {
               </p>
             </div>
             {/* Testimonial 2 - Top Right */}
-            <div className="flex items-center gap-1 absolute top-8 right-0 md:right-12 animate-in fade-in slide-in-from-right duration-700 delay-200">
+            <div className="flex items-center gap-1 absolute top-8 right-0 md:right-20 animate-in fade-in slide-in-from-right duration-700 delay-200">
               <img
                 src="/user1.jpg"
                 alt="Client"
@@ -436,21 +429,21 @@ export default function Home() {
             </div>
 
             {/* Testimonial 3 - Middle Left */}
-            <div className="flex items-center gap-1 absolute top-1/2 -translate-y-1/2 left-0 animate-in fade-in slide-in-from-left duration-700 delay-400">
-              <img
-                src="/user1.jpg"
-                alt="Client"
-                className="w-10 h-10 rounded-full object-cover border-2 border-white"
-              />
+            <div className="flex items-center gap-1 absolute top-1/2 translate-y-24 left-16  animate-in fade-in slide-in-from-left duration-700 delay-400">
               <div className="flex items-center gap-3 bg-emerald-200 rounded-full px-4 py-2 shadow-lg max-w-xs">
                 <p className="text-xs font-medium text-gray-900">
                   Poornaya has helped protect me
                 </p>
               </div>
+              <img
+                src="/user1.jpg"
+                alt="Client"
+                className="w-10 h-10 rounded-full object-cover border-2 border-white"
+              />
             </div>
 
             {/* Testimonial 4 - Middle Right */}
-            <div className="flex items-center gap-1 absolute top-1/2 translate-y-8 right-0 animate-in fade-in slide-in-from-right duration-700 delay-600">
+            <div className="flex items-center gap-1 absolute top-1/2 translate-y-8 right-16 animate-in fade-in slide-in-from-right duration-700 delay-600">
               <img
                 src="/user1.jpg"
                 alt="Client"
@@ -480,7 +473,6 @@ export default function Home() {
         </div>
       </section>
       <Footer />
-      
     </div>
   );
 }
