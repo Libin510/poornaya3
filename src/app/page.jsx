@@ -51,12 +51,12 @@ export default function Home() {
   flex gap-1 items-center
 "
           >
-            <div class="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
-              <div class="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
+            <div className="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
+              <div className="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
             </div>
 
-            <div class="border-2 border-[#666666] w-fit flex items-center gap-2 backdrop-blur-3xl  bg-[#FFFFFF66] px-5 py-2 rounded-full">
-              <span class="text-white text-sm font-semibold">Healthy Body</span>
+            <div className="border-2 border-[#666666] w-fit flex items-center gap-2 backdrop-blur-3xl  bg-[#FFFFFF66] px-5 py-2 rounded-full">
+              <span className="text-white text-sm font-semibold">Healthy Body</span>
             </div>
           </div>
           {/* --- Healthy Mind Tag --- */}
