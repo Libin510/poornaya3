@@ -69,11 +69,11 @@ export default function Home() {
   flex gap-1 items-center
 "
           >
-            <div class="w-fit flex items-center border-2 border-[#666666] gap-2 backdrop-blur-lg bg-[#FFFFFF66] bg-cover bg-center px-5 py-2 rounded-full shadow-md">
-              <span class="text-white text-sm font-semibold">Healthy Mind</span>
+            <div className="w-fit flex items-center border-2 border-[#666666] gap-2 backdrop-blur-lg bg-[#FFFFFF66] bg-cover bg-center px-5 py-2 rounded-full shadow-md">
+              <span className="text-white text-sm font-semibold">Healthy Mind</span>
             </div>
-            <div class="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
-              <div class="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
+            <div className="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
+              <div className="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
             </div>
           </div>
           <div className="absolute top-[50%] lg:top-[40%] left-3 bg-white/60 backdrop-blur-lg rounded-md w-fit px-6 py-4 shadow-lg">
@@ -170,14 +170,14 @@ md:left-[55%] md:translate-x-0 mb-4 animate-in fade-in slide-in-from-bottom-4 du
 
               <div className="flex gap-1 items-center absolute top-32 left-10">
                 <div className="bg-gradient-to-r from-[#FFFFFF] to-[#666666]  rounded-full p-[1.5px]">
-                  <div class=" w-fit flex items-center gap-2 backdrop-blur-3xl  bg-[#FFFFFF66] px-5 py-2 rounded-full">
-                    <span class="text-white text-sm font-semibold">
+                  <div className=" w-fit flex items-center gap-2 backdrop-blur-3xl  bg-[#FFFFFF66] px-5 py-2 rounded-full">
+                    <span className="text-white text-sm font-semibold">
                       Therapy Session
                     </span>
                   </div>
                 </div>
-                <div class="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
-                  <div class="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
+                <div className="w-9 h-9 rounded-full overflow-hidden border-[3px] border-[#FFFFFF66] bg-[#00000099] flex gap-2">
+                  <div className="w-[25px] h-[25px] rounded-full bg-white m-auto"></div>
                 </div>
               </div>
 
@@ -281,24 +281,24 @@ md:left-[55%] md:translate-x-0 mb-4 animate-in fade-in slide-in-from-bottom-4 du
 
                   {/* Card 1 - Top Left */}
                   <div
-                    class="absolute top-16 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56 
+                    className="absolute top-16 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56 
     rounded-xl p-4 shadow-lg 
     bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                   >
                     <div
-                      class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
+                      className="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
         text-white flex items-center justify-center 
         text-sm font-semibold"
                     >
                       1
                     </div>
-                    <div class="flex items-start gap-3">
+                    <div className="flex items-start gap-3">
                       <div>
-                        <h3 class="text-[13px] font-semibold text-emerald-900 mb-1">
+                        <h3 className="text-[13px] font-semibold text-emerald-900 mb-1">
                           Person-Centred Care
                         </h3>
 
-                        <p class="text-[11px] text-gray-700 leading-[1.4]">
+                        <p className="text-[11px] text-gray-700 leading-[1.4]">
                           Your Voice Guides Every Plan. We Listen, Understand,
                           And Build Strategies Around Your Unique Needs.
                         </p>
@@ -309,25 +309,25 @@ md:left-[55%] md:translate-x-0 mb-4 animate-in fade-in slide-in-from-bottom-4 du
                   {/* Card 2 - Top Right */}
 
                   <div
-                    class="absolute top-32 -md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
+                    className="absolute top-32 -md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
 w-48 md:w-56
     rounded-xl p-4 shadow-lg 
     bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                   >
                     <div
-                      class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
+                      className="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
         text-white flex items-center justify-center 
         text-sm font-semibold"
                     >
                       2
                     </div>
-                    <div class="flex items-start gap-3">
+                    <div className="flex items-start gap-3">
                       <div>
-                        <h3 class="text-[13px] font-semibold text-emerald-900 mb-1">
+                        <h3 className="text-[13px] font-semibold text-emerald-900 mb-1">
                           Evidence-Based Practice
                         </h3>
 
-                        <p class="text-[11px] text-gray-700 leading-[1.4]">
+                        <p className="text-[11px] text-gray-700 leading-[1.4]">
                           Proven Methods For Real, Measurable Change. Our
                           Approaches Are Grounded In Research.
                         </p>
@@ -337,25 +337,25 @@ w-48 md:w-56
                   {/* Card 3 - Bottom Right */}
 
                   <div
-                    class="absolute bottom-36  --md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
+                    className="absolute bottom-36  --md:-right-48 → sm:-right-20 md:-right-32 lg:-right-48
  w-48 md:w-56  
     rounded-xl p-4 shadow-lg 
     bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                   >
                     <div
-                      class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
+                      className="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
         text-white flex items-center justify-center 
         text-sm font-semibold"
                     >
                       3
                     </div>
-                    <div class="flex items-start gap-3">
+                    <div className="flex items-start gap-3">
                       <div>
-                        <h3 class="text-[13px] font-semibold text-emerald-900 mb-1">
+                        <h3 className="text-[13px] font-semibold text-emerald-900 mb-1">
                           Empowerment First
                         </h3>
 
-                        <p class="text-[11px] text-gray-700 leading-[1.4]">
+                        <p className="text-[11px] text-gray-700 leading-[1.4]">
                           Building Skills For Autonomy And Growth. We Focus On
                           Developing Capabilities For Independence.
                         </p>
@@ -366,24 +366,24 @@ w-48 md:w-56
                   {/* Card 4 - Bottom Left */}
 
                   <div
-                    class="absolute bottom-14 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56  
+                    className="absolute bottom-14 -md:-left-48 → sm:-left-20 md:-left-32 lg:-left-48 w-48 md:w-56  
     rounded-xl p-4 shadow-lg 
     bg-white/60 backdrop-blur-md scale-75 sm:scale-90 md:scale-100"
                   >
                     <div
-                      class="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
+                      className="w-8 h-8 rounded-full absolute -top-4 bg-emerald-900 
         text-white flex items-center justify-center 
         text-sm font-semibold"
                     >
                       4
                     </div>
-                    <div class="flex items-start gap-3">
+                    <div className="flex items-start gap-3">
                       <div>
-                        <h3 class="text-[13px] font-semibold text-emerald-900 mb-1">
+                        <h3 className="text-[13px] font-semibold text-emerald-900 mb-1">
                           Collaboration Always
                         </h3>
 
-                        <p class="text-[11px] text-gray-700 leading-[1.4]">
+                        <p className="text-[11px] text-gray-700 leading-[1.4]">
                           Working With Your Entire Care Team To Ensure Holistic
                           Outcomes And Consistent Support.
                         </p>
