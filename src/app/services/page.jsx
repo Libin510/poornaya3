@@ -14,56 +14,56 @@ export default function Services() {
       description:
         "Tailoring Services To Environment For Growth Where Individuals Feel Protected And Understood",
       image:
-        "https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?w=600&q=80",
+        "./functionalBehav.png",
     },
     {
       title: "Behaviour Support Plans",
       description:
         "Personalized Strategies That Promote Safety, Independence, And Positive Behaviour Changes",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
+        "./supportPlan.png",
     },
     {
       title: "Trauma-Informed Support",
       description:
         "Gentle, Respectful, And Emotionally Safe Approaches Rooted In Trauma-Informed Care Principles",
       image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80",
+        "./Trauma.png",
     },
     {
       title: "Autism & Forensic Care",
       description:
         "Targeted Support For Participants Within Forensic, Neurodivergent, Or Dual-Diagnosis Contexts",
       image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
+        "./Autism.png",
     },
     {
       title: "Mental Health & Self-Advocacy",
       description:
         "Building Resilience, Communication, And Emotional Regulation Through Structured Guidance",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
+        "./mentalH.png",
     },
     {
       title: "Training & Guidance",
       description:
         "Equipping Support Networks To Apply Behaviour Plans Effectively And Compassionately",
       image:
-        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80",
+        "./traing.png",
     },
     {
       title: "Ongoing Review & Monitoring",
       description:
         "Continuous Progress Evaluations To Ensure Strategies Stay Relevant And Effective",
       image:
-        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80",
+        "./ongoingReview.png",
     },
     {
       title: "Reducing Restrictive Practices",
       description:
         "Encouraging Independence And Dignity By Minimizing Restrictive Interventions Safely",
       image:
-        "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?w=600&q=80",
+        "./reducing.png",
     },
   ];
 
@@ -102,7 +102,7 @@ export default function Services() {
                   className="group bg-green-100 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   {/* Image Section */}
-                  <div className="relative h-48 md:h-56 overflow-hidden">
+                  <div className="relative h-48 md:h-80 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}

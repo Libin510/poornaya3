@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   Brain,
@@ -10,8 +12,12 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { use } from "react";
 
 export default function Footer() {
+
+  const router = useRouter();
   const services = [
     {
       title: "facebook",
@@ -28,7 +34,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#98C44B] pt-12 sm:pt-16 md:pt-4 pb-6 sm:pb-8 md:pb-10 px-4 sm:px-6 lg:px-8 rounded-lg bg-[url('/footerLine.png')] bg-no-repeat bg-[length:100%_auto]
+    <footer className="relative bg-[#98C44B] pt-12 sm:pt-16 md:pt-4 sm:pb-8 px-4 sm:px-6 lg:px-8 rounded-lg bg-[url('/footerLine.png')] bg-no-repeat bg-[length:100%_auto]
 bg-bottom-left bg-overflow-hidden">
       {/* CTA SECTION */}
       <section className="pb-8 sm:pb-10 md:pb-12 max-w-8xl mx-auto">
@@ -121,7 +127,11 @@ bg-bottom-left bg-overflow-hidden">
               Toward Positive Change?
             </h2>
 
-            <button className="inline-flex items-center gap-2 sm:gap-3 bg-[#98C44B] text-gray-900 font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 text-xs sm:text-sm">
+            <button
+            onClick={()=>{
+              router.push('/contact');
+            }}
+             className="inline-flex items-center gap-2 sm:gap-3 bg-[#98C44B] text-gray-900 font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg transition-all duration-300 hover:scale-105 text-xs sm:text-sm">
               <span className="uppercase">Book a Consultation</span>
               <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gray-900 rounded-full flex items-center justify-center">
                 <svg
